@@ -53,6 +53,11 @@ Introduce concepts one at a time. Never assume prior knowledge. If you need a bu
 **The analogy — Make it vivid, concrete, and structurally accurate**
 Find an analogy from everyday life. The best analogies are surprising, accurate, and sticky. Critical quality check: the analogy must map *relational and causal structure*, not just surface similarity. Before using it, ask: "If someone pushes this analogy one level deeper — asks the natural follow-up question — does it still hold?" If it breaks on the second question, it will create new misconceptions rather than dissolve them. Find a better one. Let the analogy breathe — walk through it slowly — but never let it become more interesting than the concept itself. The moment the story overshadows the idea, you have lost the thread.
 
+**Historical anchor — Ground it in a real moment**
+After the analogy has landed, bring in one historically significant anecdote — a real moment when this concept changed something, surprised someone, or cost someone dearly. Choose it by how well it *serves the concept*, not by how dramatic the story is. A good historical anchor does three things: it shows the idea was hard-won (not obvious), makes the stakes concrete, and leaves the audience with a face or a name attached to the idea. For child audiences, keep it brief and vivid ("a scientist named X noticed something strange..."). For teen and adult audiences, let it be specific — real dates, real names, real consequences. If the anecdote contains specific numbers or dates, flag them mentally for the Fact-Checker Agent in Step 6.
+
+The seductive-details warning applies here too: the moment the story is more interesting than the concept, cut it or trim it. The anecdote is a carrier, not the cargo.
+
 **The honest bump — Don't pretend it's all neat**
 Every deep concept has a place where it gets genuinely strange. Name it. "And here's where it gets weird — even physicists argue about this part." This builds trust and mirrors how Feynman actually taught.
 
@@ -128,9 +133,45 @@ The revised explanation must be complete and self-contained — not just a list 
 After revising, do a final self-check:
 - Did every piece of Audience Agent feedback get addressed?
 - Is the revised explanation genuinely clearer, or just longer?
-- Does it still follow the Step 3 structure (Motivation signal → Surface misconception → Hook → Build → Analogy → Honest bump → Deeper layer → So what)?
+- Does it still follow the Step 3 structure (Motivation signal → Surface misconception → Hook → Build → Analogy → Historical anchor → Honest bump → Deeper layer → So what)?
 - Does the analogy hold when pushed one level deeper?
 - Is any part of the explanation more interesting than the core concept itself?
+
+---
+
+## Step 6 — Fact-Checker Agent
+
+After the revised explanation is complete, use the **Agent tool** to spawn a second subagent — the Fact-Checker Agent. Its sole job is to verify every specific factual claim in the revised explanation: dates, names, numbers, statistics, and the accuracy of any historical anecdotes.
+
+Pass the subagent exactly this prompt, substituting the actual values:
+
+---
+*You are a meticulous fact-checker. You have been given an explanation that contains specific factual claims — dates, names, numbers, statistics, and historical anecdotes. Your job is to verify each one.*
+
+*For every specific claim you can check, return one of:*
+- *✔ Confirmed — [the claim] is accurate*
+- *✘ Incorrect — [the claim]: the correct information is [correction]*
+- *⚠ Uncertain — [the claim]: could not verify with confidence; flag for review*
+
+*Be specific. Quote the exact phrase from the explanation you are checking. Do not comment on writing quality, clarity, or structure — only factual accuracy. If a claim is vague enough that it cannot be fact-checked (e.g. "many scientists believe..."), skip it.*
+
+*Here is the explanation:*
+
+{FULL REVISED EXPLANATION TEXT}
+
+---
+
+Do not pass the topic name, reasoning, or any other context. The subagent should work only from what is written.
+
+When the subagent returns, display its output labeled:
+
+> **[Fact-Checker Agent]**
+
+If any **✘ Incorrect** items are returned, apply the corrections directly to the revised explanation and note what changed at the bottom:
+
+> **[Factual corrections applied: ...]**
+
+If all claims are confirmed or only ⚠ Uncertain items remain, note that and leave the explanation unchanged.
 
 ---
 
@@ -147,3 +188,6 @@ After revising, do a final self-check:
 - Don't let the analogy, story, or example be more interesting than the concept — interesting tangents that don't serve the core idea consistently harm learning; the audience remembers the tangent and loses the thread (seductive details effect)
 - Don't correct the misconception before surfacing it — state it first, let it sit, then let the explanation do the correcting
 - Don't use an analogy that only matches surface features; if it breaks when pushed one level deeper, replace it
+- Don't let the historical anchor become the main event — it serves the concept, not the other way around
+- Don't skip the Fact-Checker Agent when the explanation contains specific dates, numbers, names, or statistics — confidence is not accuracy
+- Don't silently drop incorrect facts; apply corrections explicitly and note what changed
