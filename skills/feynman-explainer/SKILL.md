@@ -42,9 +42,13 @@ Follow this structure in order:
 
 **The analogy** — Vivid, concrete, and structurally accurate. Must hold when pushed one level deeper. If it breaks on the second question, replace it.
 
-**Historical anchor** — One historically significant anecdote: a real moment when this concept changed something, surprised someone, or cost someone dearly. Be specific — real names, real dates, real consequences (calibrated to audience level). Choose it by how well it serves the concept, not by how dramatic it is.
+**Historical anchor** — Ground the concept in real human history using this structure:
 
-*Closure is mandatory:* End the anecdote with an explicit sentence that bridges back to the core concept — e.g. "And that's the same force we've been building toward." Without closure, the anecdote is a detour; with it, it becomes proof.
+1. **One detailed anecdote** — a real moment when this concept changed something, surprised someone, or cost someone dearly. Be specific: real names, real dates, real consequences (calibrated to audience level). Walk through it with enough detail that the reader feels the stakes. Choose it by how well it *serves the concept*, not by how dramatic it is.
+
+2. **One to two brief mentions** — after the detailed anecdote, add 1–2 sentences pointing to other historically significant moments related to the concept. These are signposts, not stories: one sentence each, enough to show the concept has a richer history without derailing into another full narrative. Example format: "It wasn't the only time this played out this way — [name] ran into the same problem in [year] when [one-sentence summary]."
+
+*Closure is mandatory on the detailed anecdote:* End it with an explicit sentence that bridges back to the core concept — e.g. "And that's the same principle we've been building toward." Without closure, the anecdote is a detour; with it, it becomes proof. The brief mentions do not need individual closures.
 
 **The honest bump** — Name the place where the concept gets genuinely strange. "And here's where it gets weird — even experts argue about this part." This builds trust.
 

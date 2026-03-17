@@ -1,7 +1,7 @@
 {
   "name": "feynman-explainer",
   "description": "Explains any concept in Richard Feynman's style — from first principles, using simple language and vivid analogies",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "author": {
     "name": "Kumar Biswaranjan"
   }
