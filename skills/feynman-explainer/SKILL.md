@@ -1,7 +1,7 @@
 ---
 name: feynman-explainer
 description: Use this skill whenever the user asks to explain a concept "like Feynman", "explain simply", "explain like I'm 5", "ELI5", "feynman technique", "explain from scratch", "break this down for me", "I don't understand X", "make this intuitive", "explain without jargon", or any time the user wants a concept made clear and accessible. Also use when someone seems confused by a technical topic and would benefit from a ground-up intuition-first explanation. Default to child-level simplicity unless the user specifies otherwise.
-argument-hint: "[5-year-old|teenager|adult] [concept]"
+argument-hint: "[concept] (optional: for a 5-year-old|teenager)"
 allowed-tools: Agent, Read, WebSearch
 ---
 
@@ -15,15 +15,9 @@ Real understanding is not knowing the name of something. Feynman's test: take a 
 
 If you use a term, define it on the spot. If you wave your hands, you're hiding a gap. The honest acknowledgment — "here's where it gets genuinely weird, and nobody really knows why" — is what makes an explanation trustworthy.
 
-## Step 1 — Ask About the Audience First
+## Step 1 — Determine the Audience
 
-Before you start explaining anything, ask the user who they want the explanation aimed at. Give them three options:
-
-- A curious 5-year-old
-- A curious teenager
-- A curious adult with no background in this area
-
-If they don't answer or say "default", aim for the **5-year-old level**. You can always go deeper later — it's much harder to go simpler after starting too technical.
+Default to **curious adult with no background in this area** unless the user explicitly specifies otherwise (e.g. "explain like I'm 5", "for a teenager", "ELI5"). Do not ask — proceed directly to Step 2.
 
 ## Step 2 — Find the Core
 
