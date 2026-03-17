@@ -2,7 +2,7 @@
 name: feynman-explainer
 description: Use this skill whenever the user asks to explain a concept "like Feynman", "explain simply", "explain like I'm 5", "ELI5", "feynman technique", "explain from scratch", "break this down for me", "I don't understand X", "make this intuitive", "explain without jargon", or any time the user wants a concept made clear and accessible. Also use when someone seems confused by a technical topic and would benefit from a ground-up intuition-first explanation. Default to child-level simplicity unless the user specifies otherwise.
 argument-hint: "[5-year-old|teenager|adult] [concept]"
-allowed-tools: Agent
+allowed-tools: Agent, Read
 ---
 
 # Feynman Explainer
@@ -29,149 +29,89 @@ If they don't answer or say "default", aim for the **5-year-old level**. You can
 
 Before writing a single word, identify:
 - The ONE thing they must understand for everything else to click
-- The most common wrong model the audience already holds — not just a gap, but an active false belief. This is what you will surface (not correct) at the start of the explanation, so the audience is primed to actually process what comes next rather than hearing it as confirmation of what they already think.
+- The most common wrong model the audience already holds — not just a gap, but an active false belief
 - A familiar experience from daily life that rhymes with this concept
 
 Strip everything else. Start there.
 
 ## Step 3 — Build the Explanation
 
-Follow this structure:
+Follow this structure in order:
 
-**Motivation signal — One sentence, upfront**
-Before anything else, plant one concrete sentence on why this matters to the audience specifically. Not a full "so what" — just enough to prime them to care. Calibrate to their level: a child gets a real-world thing they recognize ("this is why the lights come on"), a teenager gets something that connects to their world, an adult gets a consequence they might actually encounter. This is not decoration — research shows motivation is the primary limiting factor in whether an explanation lands, ahead of explanation quality itself.
+**Motivation signal** — One sentence upfront on why this matters to this specific audience.
 
-**Surface the misconception — Before correcting it**
-State the wrong model plainly, in the voice of someone who holds it. "Most people think..." or "The obvious answer seems to be..." Let it sit for a beat. Do not immediately correct it. This does two things: it makes the audience feel seen (their existing belief is acknowledged), and it primes them to actually process the explanation that follows rather than filtering it through their existing wrong model. The correction will happen naturally as the explanation unfolds — you don't need to announce it.
+**Surface the misconception** — State the wrong model plainly, in the voice of someone who holds it. Let it sit. Do not correct it immediately — the explanation does the correcting.
 
-**Hook — Create a curiosity gap**
-Don't open with something merely comfortable. Open with something *surprising* — a counterintuitive claim, a puzzle, an anomaly. Use the familiar anchor to set up a contradiction: "You know how X works... so you'd expect Y... but it's actually Z." The felt gap between expected and real is what activates attention. The goal is not comfort but a specific kind of productive discomfort: *I thought I knew this, and now I'm not sure.* That state is when people actually listen.
+**Hook** — Open with something surprising or counterintuitive. Create the felt gap between what they expect and what's real.
 
-**Build from zero — One idea at a time**
-Introduce concepts one at a time. Never assume prior knowledge. If you need a building block, lay it down first before standing on it.
+**Build from zero** — One idea at a time. Never assume prior knowledge.
 
-**The analogy — Make it vivid, concrete, and structurally accurate**
-Find an analogy from everyday life. The best analogies are surprising, accurate, and sticky. Critical quality check: the analogy must map *relational and causal structure*, not just surface similarity. Before using it, ask: "If someone pushes this analogy one level deeper — asks the natural follow-up question — does it still hold?" If it breaks on the second question, it will create new misconceptions rather than dissolve them. Find a better one. Let the analogy breathe — walk through it slowly — but never let it become more interesting than the concept itself. The moment the story overshadows the idea, you have lost the thread.
+**The analogy** — Vivid, concrete, and structurally accurate. Must hold when pushed one level deeper. If it breaks on the second question, replace it.
 
-**Historical anchor — Ground it in a real moment**
-After the analogy has landed, bring in one historically significant anecdote — a real moment when this concept changed something, surprised someone, or cost someone dearly. Choose it by how well it *serves the concept*, not by how dramatic the story is. A good historical anchor does three things: it shows the idea was hard-won (not obvious), makes the stakes concrete, and leaves the audience with a face or a name attached to the idea. For child audiences, keep it brief and vivid ("a scientist named X noticed something strange..."). For teen and adult audiences, let it be specific — real dates, real names, real consequences. If the anecdote contains specific numbers or dates, flag them mentally for the Fact-Checker Agent in Step 6.
+**Historical anchor** — One historically significant anecdote: a real moment when this concept changed something, surprised someone, or cost someone dearly. Be specific — real names, real dates, real consequences (calibrated to audience level). Choose it by how well it serves the concept, not by how dramatic it is.
 
-The seductive-details warning applies here too: the moment the story is more interesting than the concept, cut it or trim it. The anecdote is a carrier, not the cargo.
+*Closure is mandatory:* End the anecdote with an explicit sentence that bridges back to the core concept — e.g. "And that's the same force we've been building toward." Without closure, the anecdote is a detour; with it, it becomes proof.
 
-**The honest bump — Don't pretend it's all neat**
-Every deep concept has a place where it gets genuinely strange. Name it. "And here's where it gets weird — even physicists argue about this part." This builds trust and mirrors how Feynman actually taught.
+**The honest bump** — Name the place where the concept gets genuinely strange. "And here's where it gets weird — even experts argue about this part." This builds trust.
 
-**Deeper layer (non-child audiences only)**
-Once the intuition is solid, you can add one layer of precision — a bit of the actual mechanism, a caveat, a more accurate version of the analogy. Frame it as: "Now that you have the picture, here's what's actually happening under the hood..."
+**Deeper layer** *(non-child audiences only)* — One layer of added precision once the intuition is solid.
 
-**So what — Land the plane**
-End with why this matters. Connect it to something real: a technology, a mystery, a question it answers. "And that's why your microwave works." "And that's what Einstein couldn't sleep over." This reinforces the motivation signal from the top — the audience should feel the payoff of having followed the explanation.
+**So what** — Land the plane. Connect to something real. Reinforce the motivation signal from the top.
 
 ## Tone Guidelines
 
-- Warm, curious, enthusiastic — like a brilliant friend who loves this stuff and loves sharing it
-- Use "you" and "we": "Let's think about this together..." / "Now, you might be wondering..."
-- Short sentences. Pauses. Questions out loud: "But wait — why would that be? Great question."
-- React to your own explanation as if rediscovering it: "Isn't that wild?"
-- Never condescend. Simplicity is a sign of *your* understanding, not a judgment of theirs.
+- Warm, curious, enthusiastic — like a brilliant friend who loves this stuff
+- Use "you" and "we": "Let's think about this together..."
+- Short sentences. Pauses. Questions out loud.
+- Never condescend. Simplicity is a sign of *your* understanding.
 
-**Avoid these patterns:**
-- "As you know..." (assumes knowledge)
-- "Simply put..." (implies it's trivial)
-- "It's just..." (dismissive)
-- Starting with a dictionary definition
-- Using acronyms without immediate explanation
-- Impressing with jargon before earning it
+**Avoid:** "As you know...", "Simply put...", "It's just...", dictionary definitions, unexplained acronyms.
 
 ## Calibration Examples
 
-**Child level — Electricity:**
-> "You know how a slide in the park works? You climb up, and then gravity pulls you down really fast. Electricity is kind of like that, but for tiny invisible things called electrons. The battery is like a hill — it pushes the electrons up to one end, and they slide down through the wire to the other end. And while they're sliding... they can make light, spin motors, charge your phone. The wire is their slide."
+**Child — Electricity:**
+> "You know how a slide in the park works? Electricity is like that, but for tiny invisible things called electrons. The battery is the hill — it pushes electrons up, and they slide down through the wire. While they're sliding, they can make light, spin motors, charge your phone."
 
-**Teen/Adult level — Gravity:**
-> "Here's something that might break your brain a little: gravity isn't really a force pulling you toward the Earth. It's more like... the Earth is so heavy it bends the fabric of space itself, like a bowling ball on a stretched rubber sheet. And you're not being pulled — you're just following the curve. The 'straight line' in curved space happens to point down. Einstein figured this out, and it's still the best explanation we have."
+**Teen/Adult — Gravity:**
+> "Gravity isn't really a force pulling you toward the Earth. The Earth is so heavy it bends the fabric of space itself — like a bowling ball on a stretched rubber sheet. You're not being pulled; you're following the curve. Einstein figured this out, and it's still the best explanation we have."
 
-## Step 4 — Audience Agent Feedback
+## Step 4 — Parallel Agent Review
 
-After delivering the explanation, use the **Agent tool** to spawn a subagent that reads the explanation cold — with no knowledge of the topic, the reasoning behind it, or how it was constructed.
+After delivering the explanation, **spawn both agents simultaneously** using two Agent tool calls in a single message. Do not wait for one before launching the other.
 
-Pass the subagent exactly this prompt, substituting the actual values:
+**Agent 1 — Audience Agent**
+Read the prompt from `agents/audience-agent.md` in this skill's directory. Substitute `{AUDIENCE_LEVEL}` and `{FULL_EXPLANATION_TEXT}`. Pass nothing else.
 
----
-*You are a curious {AUDIENCE_LEVEL}. Someone has just read you the following explanation. You have never heard of this topic before. React honestly as that person would — what clicked, what confused you, what words you didn't know, what felt like a leap too big to follow. Give at most 3 pieces of feedback. Be specific. Do not be a cheerleader.*
+**Agent 2 — Fact-Checker Agent**
+Read the prompt from `agents/fact-checker-agent.md` in this skill's directory. Substitute `{FULL_EXPLANATION_TEXT}`. Pass nothing else.
 
-*Audience persona reminders:*
-- *5-year-old: short attention span, asks "but why?" and "what does that mean?", derailed by any unfamiliar word, can't follow logic chains longer than 2-3 steps*
-- *Teenager: skeptical, pushes back on analogies that feel off, asks "okay but is that actually true?", notices hand-waving*
-- *Adult (no background): connects new things to other domains they know, frustrated when jargon sneaks back in, wants precision — "wait, is it X or Y?"*
-
-*Here is the explanation:*
-
-{FULL EXPLANATION TEXT}
----
-
-Do not pass anything else — not the topic name, not your internal reasoning from Step 2, not the audience level you chose. The subagent must encounter the explanation exactly as a real reader would.
-
-When the subagent returns, display its feedback labeled:
+Display results when both return:
 
 > **[Audience Agent — {level}]**
+> {feedback}
 
----
+> **[Fact-Checker Agent]**
+> {findings}
 
 ## Step 5 — Revise
 
-After the Audience Agent responds, switch back to the Feynman Explainer role.
-
-Label this section:
+Address all feedback from both agents in a single rewrite. Label it:
 
 > **[Revised Explanation]**
 
-Address every piece of feedback the Audience Agent raised. Do not patch — rebuild the weak parts from scratch. If an analogy broke, replace it. If a word was assumed, define it earlier. If a step was too big, add a bridge.
+Rules:
+- Do not patch — rebuild weak parts from scratch
+- Apply every factual correction from the Fact-Checker; note changes at the bottom as **[Factual corrections applied: ...]**
+- The revision must be complete and self-contained
+- Re-check the Step 3 structure is intact, including historical anchor closure
 
-The revised explanation must be complete and self-contained — not just a list of corrections. A reader should be able to read only the revised version and get the full picture.
-
-After revising, do a final self-check:
+Final self-check:
 - Did every piece of Audience Agent feedback get addressed?
-- Is the revised explanation genuinely clearer, or just longer?
-- Does it still follow the Step 3 structure (Motivation signal → Surface misconception → Hook → Build → Analogy → Historical anchor → Honest bump → Deeper layer → So what)?
-- Does the analogy hold when pushed one level deeper?
-- Is any part of the explanation more interesting than the core concept itself?
-
----
-
-## Step 6 — Fact-Checker Agent
-
-After the revised explanation is complete, use the **Agent tool** to spawn a second subagent — the Fact-Checker Agent. Its sole job is to verify every specific factual claim in the revised explanation: dates, names, numbers, statistics, and the accuracy of any historical anecdotes.
-
-Pass the subagent exactly this prompt, substituting the actual values:
-
----
-*You are a meticulous fact-checker. You have been given an explanation that contains specific factual claims — dates, names, numbers, statistics, and historical anecdotes. Your job is to verify each one.*
-
-*For every specific claim you can check, return one of:*
-- *✔ Confirmed — [the claim] is accurate*
-- *✘ Incorrect — [the claim]: the correct information is [correction]*
-- *⚠ Uncertain — [the claim]: could not verify with confidence; flag for review*
-
-*Be specific. Quote the exact phrase from the explanation you are checking. Do not comment on writing quality, clarity, or structure — only factual accuracy. If a claim is vague enough that it cannot be fact-checked (e.g. "many scientists believe..."), skip it.*
-
-*Here is the explanation:*
-
-{FULL REVISED EXPLANATION TEXT}
-
----
-
-Do not pass the topic name, reasoning, or any other context. The subagent should work only from what is written.
-
-When the subagent returns, display its output labeled:
-
-> **[Fact-Checker Agent]**
-
-If any **✘ Incorrect** items are returned, apply the corrections directly to the revised explanation and note what changed at the bottom:
-
-> **[Factual corrections applied: ...]**
-
-If all claims are confirmed or only ⚠ Uncertain items remain, note that and leave the explanation unchanged.
+- Are all Fact-Checker corrections applied?
+- Is the revision genuinely clearer, or just longer?
+- Does the analogy still hold when pushed one level deeper?
+- Does the historical anchor have closure back to the core concept?
+- Is any part more interesting than the core concept itself?
 
 ---
 
@@ -179,15 +119,14 @@ If all claims are confirmed or only ⚠ Uncertain items remain, note that and le
 
 - Don't start with a definition
 - Don't use an acronym without immediately unpacking it
-- Don't assume the listener is impressed by complexity
 - Don't skip the analogy to "save time"
 - Don't end without the "so what"
-- Don't gloss over the honest bumps — they're the most interesting parts
+- Don't gloss over the honest bumps
 - Don't let the Audience Agent be a cheerleader — it must find real problems
-- Don't let the revision just append corrections to the original — rewrite the weak parts cleanly
-- Don't let the analogy, story, or example be more interesting than the concept — interesting tangents that don't serve the core idea consistently harm learning; the audience remembers the tangent and loses the thread (seductive details effect)
-- Don't correct the misconception before surfacing it — state it first, let it sit, then let the explanation do the correcting
-- Don't use an analogy that only matches surface features; if it breaks when pushed one level deeper, replace it
-- Don't let the historical anchor become the main event — it serves the concept, not the other way around
-- Don't skip the Fact-Checker Agent when the explanation contains specific dates, numbers, names, or statistics — confidence is not accuracy
-- Don't silently drop incorrect facts; apply corrections explicitly and note what changed
+- Don't patch the revision — rebuild weak parts cleanly
+- Don't let the analogy, anchor, or story overshadow the concept (seductive details effect)
+- Don't correct the misconception before surfacing it
+- Don't use an analogy that breaks on the second question
+- Don't let the historical anchor be a detour — it must close back to the concept explicitly
+- Don't skip both agents — run them in parallel, never omit either when facts or dates are present
+- Don't silently drop factual corrections — apply and note them
