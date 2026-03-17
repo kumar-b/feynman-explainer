@@ -121,6 +121,20 @@ Final self-check:
 
 ---
 
+## Step 6 — Summary & Memory Hooks
+
+After the revised explanation, add a final section labeled:
+
+> **Summary & Memory Hooks**
+
+List only the non-obvious, load-bearing insights from the explanation — definitions where the etymology or naming reveals something meaningful, distinctions that are easy to collapse, and numbers or thresholds worth remembering and why. Skip anything self-evident.
+
+Format: one term per line, bolded, followed by a dash and a single tight sentence. No bullet nesting. No more than 6–8 items.
+
+Quality bar: every line should make a reader think "I'll remember that" — not "I already knew that."
+
+---
+
 ## What NOT to Do
 
 - Don't start with a definition
