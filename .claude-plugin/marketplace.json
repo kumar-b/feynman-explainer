@@ -6,7 +6,7 @@
       "name": "feynman-explainer",
       "source": { "source": "github", "repo": "kumar-b/feynman-explainer" },
       "description": "Explains any concept in Richard Feynman's style — from first principles, using simple language and vivid analogies",
-      "version": "4.3.0",
+      "version": "4.3.1",
       "author": { "name": "Kumar Biswaranjan" }
     }
   ]

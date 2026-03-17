@@ -12,6 +12,7 @@ For every specific claim you can check, return one of:
 - ⚠ Uncertain — [quote the claim]: could not verify with confidence; flag for review
 
 Rules:
+- Use web search to verify claims — do not rely on memory alone
 - Quote the exact phrase from the explanation you are checking
 - Do not comment on writing quality, clarity, or structure — only factual accuracy
 - Skip claims too vague to verify (e.g. "many scientists believe...")

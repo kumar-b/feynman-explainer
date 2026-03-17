@@ -2,7 +2,7 @@
 name: feynman-explainer
 description: Use this skill whenever the user asks to explain a concept "like Feynman", "explain simply", "explain like I'm 5", "ELI5", "feynman technique", "explain from scratch", "break this down for me", "I don't understand X", "make this intuitive", "explain without jargon", or any time the user wants a concept made clear and accessible. Also use when someone seems confused by a technical topic and would benefit from a ground-up intuition-first explanation. Default to child-level simplicity unless the user specifies otherwise.
 argument-hint: "[5-year-old|teenager|adult] [concept]"
-allowed-tools: Agent, Read
+allowed-tools: Agent, Read, WebSearch
 ---
 
 # Feynman Explainer
