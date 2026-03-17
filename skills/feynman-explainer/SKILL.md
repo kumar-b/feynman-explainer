@@ -77,7 +77,7 @@ Follow this structure in order:
 
 ## Step 4 — Parallel Agent Review
 
-After delivering the explanation, **spawn both agents simultaneously** using two Agent tool calls in a single message. Do not wait for one before launching the other.
+After delivering the explanation, **spawn all three agents simultaneously** using three Agent tool calls in a single message. Do not wait for one before launching the others.
 
 **Agent 1 — Audience Agent**
 Read the prompt from `agents/audience-agent.md` in this skill's directory. Substitute `{AUDIENCE_LEVEL}` and `{FULL_EXPLANATION_TEXT}`. Pass nothing else.
@@ -85,13 +85,19 @@ Read the prompt from `agents/audience-agent.md` in this skill's directory. Subst
 **Agent 2 — Fact-Checker Agent**
 Read the prompt from `agents/fact-checker-agent.md` in this skill's directory. Substitute `{FULL_EXPLANATION_TEXT}`. Pass nothing else.
 
-Display results when both return:
+**Agent 3 — Key Questions Agent**
+Read the prompt from `agents/key-questions-agent.md` in this skill's directory. Substitute `{TOPIC}` with the concept name only — one phrase, no explanation text, no audience level, no context whatsoever. This agent must encounter the topic completely cold.
+
+Display results when all three return:
 
 > **[Audience Agent — {level}]**
 > {feedback}
 
 > **[Fact-Checker Agent]**
 > {findings}
+
+> **[Key Questions Agent]**
+> {questions}
 
 ## Step 5 — Revise
 
@@ -102,12 +108,14 @@ Address all feedback from both agents in a single rewrite. Label it:
 Rules:
 - Do not patch — rebuild weak parts from scratch
 - Apply every factual correction from the Fact-Checker; note changes at the bottom as **[Factual corrections applied: ...]**
+- For each of the 5 Key Questions Agent questions: either the revised explanation answers it, or there is a deliberate reason not to (audience level, scope). Note any intentionally skipped questions as **[Key questions deferred: ...]**
 - The revision must be complete and self-contained
 - Re-check the Step 3 structure is intact, including historical anchor closure
 
 Final self-check:
 - Did every piece of Audience Agent feedback get addressed?
 - Are all Fact-Checker corrections applied?
+- Does the revised explanation cover the load-bearing questions from the Key Questions Agent?
 - Is the revision genuinely clearer, or just longer?
 - Does the analogy still hold when pushed one level deeper?
 - Does the historical anchor have closure back to the core concept?
@@ -128,5 +136,6 @@ Final self-check:
 - Don't correct the misconception before surfacing it
 - Don't use an analogy that breaks on the second question
 - Don't let the historical anchor be a detour — it must close back to the concept explicitly
-- Don't skip both agents — run them in parallel, never omit either when facts or dates are present
+- Don't skip any of the three agents — all must run in parallel; omitting one defeats the independent review
+- Don't give the Key Questions Agent any context beyond the topic name — its value is in what it surfaces without being primed
 - Don't silently drop factual corrections — apply and note them
